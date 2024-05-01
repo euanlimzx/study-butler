@@ -1,25 +1,15 @@
+import { ChakraProvider } from "@chakra-ui/react"
 import { useState } from "react"
+import { Flex, Text } from "@chakra-ui/react"
 
 function IndexPopup() {
-  const [data, setData] = useState("")
-
   return (
-    <div
-      style={{
-        padding: 16
-      }}>
-      <h2>
-        Welcome to your{" "}
-        <a href="https://www.plasmo.com" target="_blank">
-          Plasmo
-        </a>{" "}
-        Extension!
-      </h2>
-      <input onChange={(e) => setData(e.target.value)} value={data} />
-      <a href="https://docs.plasmo.com" target="_blank">
-        View Docs
-      </a>
-    </div>
+    <ChakraProvider>
+      <Flex h="200px" w="200px" justifyContent="center" flexDirection="column" px="30px">
+        <Text as="span" textAlign="start">Logged in as <Text as="span" fontWeight="bold" textAlign="start">euanlimzx</Text></Text>
+        <Text textAlign="start">Current document selected: Google Docs</Text>
+      </Flex>
+    </ChakraProvider>
   )
 }
 
